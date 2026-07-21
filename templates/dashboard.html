@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>CRUD System Dashboard</h2>
+    <form action="/add" method="post">
+        <input type="text" name="content" placeholder="নতুন ডাটা লিখুন" required>
+        <button type="submit">Add Data</button>
+    </form>
+    <hr>
+    <ul>
+        {% for item in items %}
+        <li>
+            {{ item['content'] }} 
+            <a href="/edit/{{ item['id'] }}">Edit</a> | 
+            <a href="/delete/{{ item['id'] }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
